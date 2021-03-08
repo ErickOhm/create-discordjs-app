@@ -9,7 +9,7 @@
   <a href="https://github.com/erickmack/create-discordjs-app/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/erickmack/create-discordjs-app/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/erickmack/create-discordjs-app/blob/main/LICENSE" target="_blank">
     <img alt="License: GNU GPLv3" src="https://img.shields.io/github/license/erickmack/create-discordjs-app" />
   </a>
   <a href="https://twitter.com/eriickmack" target="_blank">
