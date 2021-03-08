@@ -21,13 +21,12 @@
 
 ### 🏠 [Homepage](https://github.com/erickmack/create-discordjs-app#readme)
 
-## Install
+## Install package globally
 
 ```sh
-npm install
+npm i -g create-discordjs-app
 ```
-
-## Usage
+## Use npx
 
 ```sh
 npx create-discordjs-app
@@ -52,7 +51,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Erickmack](https://github.com/erickmack).<br />
-This project is [GNU GPLv3](https://github.com/erickmack/create-discordjs-app/blob/master/LICENSE) licensed.
+This project is [GNU GPLv3](https://github.com/erickmack/create-discordjs-app/blob/main/LICENSE) licensed.
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
