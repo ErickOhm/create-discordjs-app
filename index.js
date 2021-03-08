@@ -39,7 +39,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   const projectName = answers["project-name"];
   const license = answers["license"];
   const author = answers["author"];
-  const botToken = BotTokenHere;
+  const botToken = 'BotTokenHere';
   const botPrefix = answers["bot-prefix"];
   const templatePath = `${__dirname}/templates/${projectChoice}`;
 
@@ -50,9 +50,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     "description": "A simple discordjs bot",
     "main": "index.js",
     "scripts": {
-      "start": "pm2 start npm --watch -- node",
-      "node": "node index.js",
-      "stop": "pm2 stop npm",
+      "start": "node index.js",
       "test": "echo \"Error: no test specified\" && exit 1",
       "lint": "eslint ."
     },
@@ -67,7 +65,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
       "discord.js": "^12.5.1",
       "dotenv": "^8.2.0",
       "eslint": "^7.21.0",
-      "pm2": "^4.5.5"
     }
   }
   `;
@@ -87,9 +84,8 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   `;
   const info = `
     Inside that directory you can run:
-      * npm start: Runs the bot with pm2
-      * npm run node: Runs the bot using node
-      * npm run stop: Stops pm2
+      * npm start: Runs the bot
+      * npm run lint: Runs eslint
   `;
   const start = `
     To start: 
