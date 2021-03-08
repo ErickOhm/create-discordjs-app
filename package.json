@@ -1,0 +1,32 @@
+{
+  "name": "create-discordjs-app",
+  "version": "1.0.0",
+  "description": "Creates a basic discordjs app based on the discordjs.guide website",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmack/create-discordjs-app.git"
+  },
+  "keywords": [
+    "discordjs",
+    "bot",
+    "create-app",
+    "discord"
+  ],
+  "author": "Erickmack",
+  "license": "GNU GPLv3",
+  "bugs": {
+    "url": "https://github.com/erickmack/create-discordjs-app/issues"
+  },
+  "homepage": "https://github.com/erickmack/create-discordjs-app#readme",
+  "bin": {
+    "create-discordjs-app": "./index.js"
+  }
+}
