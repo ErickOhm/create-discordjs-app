@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const inquirer = require("inquirer");
 const fs = require("fs");
-const child_process = require("child_process")
+const child_process = require("child_process");
 
 const QUESTIONS = [
   {
@@ -15,14 +15,21 @@ const QUESTIONS = [
     },
   },
   {
-    name: "bot-token",
-    type: "password",
-    message: "Bot token:",
+    name: "author",
+    type: "input",
+    message: "Author:",
+  },
+  {
+    name: "license",
+    type: "input",
+    message: "License:",
+    default: 'ISC'
   },
   {
     name: "bot-prefix",
     type: "input",
     message: "Bot prefix:",
+    default: '!'
   },
 ];
 const CURR_DIR = process.cwd();
@@ -30,17 +37,50 @@ const CURR_DIR = process.cwd();
 inquirer.prompt(QUESTIONS).then((answers) => {
   const projectChoice = "cda";
   const projectName = answers["project-name"];
-  const botToken = answers["bot-token"];
+  const license = answers["license"];
+  const author = answers["author"];
+  const botToken = BotTokenHere;
   const botPrefix = answers["bot-prefix"];
   const templatePath = `${__dirname}/templates/${projectChoice}`;
+
+  const packageJson = `
+  {
+    "name": "${projectName}",
+    "version": "1.0.0",
+    "description": "A simple discordjs bot",
+    "main": "index.js",
+    "scripts": {
+      "start": "pm2 start npm --watch -- node",
+      "node": "node index.js",
+      "stop": "pm2 stop npm",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "lint": "eslint ."
+    },
+    "keywords": [
+      "discordjs",
+      "bot"
+    ],
+    "author": "${author}",
+    "license": "${license}",
+    "dependencies": {
+      "chalk": "^4.1.0",
+      "discord.js": "^12.5.1",
+      "dotenv": "^8.2.0",
+      "eslint": "^7.21.0",
+      "pm2": "^4.5.5"
+    }
+  }
+  `;
 
   fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
   createDirectoryContents(templatePath, projectName);
   const content = `BOT_TOKEN=${botToken}\nPREFIX=${botPrefix}`;
-  const writePath = `${CURR_DIR}/${projectName}/.env`;
-      fs.writeFileSync(writePath, content, "utf8");
-  console.log('Installing dependencies...')
+  const envPath = `${CURR_DIR}/${projectName}/.env`;
+  fs.writeFileSync(envPath, content, "utf8");
+  const packagePath = `${CURR_DIR}/${projectName}/package.json`;
+  fs.writeFileSync(packagePath, packageJson, "utf8");
+  console.log("Installing dependencies...");
   child_process.execSync(`cd ${projectName} && npm i`);
   const success = `
     Success! Created ${projectName} at ${CURR_DIR}/${projectName}
@@ -51,14 +91,18 @@ inquirer.prompt(QUESTIONS).then((answers) => {
       * npm run node: Runs the bot using node
       * npm run stop: Stops pm2
   `;
+  const start = `
+    To start: 
+      * cd into ${projectName}
+      * Add your bot token in the .env file
+      * run npm start
+  `;
   console.log(success);
   console.log(info);
+  console.log(start);
 });
 
-function createDirectoryContents(
-  templatePath,
-  newProjectPath,
-) {
+function createDirectoryContents(templatePath, newProjectPath) {
   const filesToCreate = fs.readdirSync(templatePath);
   filesToCreate.forEach((file) => {
     const origFilePath = `${templatePath}/${file}`;

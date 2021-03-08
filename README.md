@@ -33,6 +33,19 @@ npm i -g create-discordjs-app
 npx create-discordjs-app
 ```
 
+After that you will be prompted for information like Project name, Bot token, and Bot prefix
+
+Then you can start the bot with pm2
+
+```sh
+npm start
+```
+
+or if you prefer to use node
+```sh
+npm run node
+```
+
 ## Author
 
 👤 **Erickmack**
