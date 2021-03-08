@@ -1,6 +1,6 @@
 {
   "name": "create-discordjs-app",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Creates a basic discordjs app based on the discordjs.guide website",
   "main": "index.js",
   "dependencies": {
