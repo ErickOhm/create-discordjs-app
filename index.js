@@ -36,7 +36,10 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
-  createDirectoryContents(templatePath, projectName, botToken, botPrefix);
+  createDirectoryContents(templatePath, projectName);
+  const content = `BOT_TOKEN=${botToken}\nPREFIX=${botPrefix}`;
+  const writePath = `${CURR_DIR}/${projectName}/.env`;
+      fs.writeFileSync(writePath, content, "utf8");
   console.log('Installing dependencies...')
   child_process.execSync(`cd ${projectName} && npm i`);
   const success = `
@@ -55,8 +58,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 function createDirectoryContents(
   templatePath,
   newProjectPath,
-  botToken,
-  botPrefix
 ) {
   const filesToCreate = fs.readdirSync(templatePath);
   filesToCreate.forEach((file) => {
@@ -66,11 +67,9 @@ function createDirectoryContents(
     const stats = fs.statSync(origFilePath);
 
     if (stats.isFile()) {
-      let contents = fs.readFileSync(origFilePath, "utf8");
+      const contents = fs.readFileSync(origFilePath, "utf8");
 
       if (file === ".npmignore") file = ".gitignore";
-      if (file === ".env")
-        contents = `BOT_TOKEN=${botToken}\nPREFIX=${botPrefix}`;
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
       fs.writeFileSync(writePath, contents, "utf8");
     } else if (stats.isDirectory()) {
