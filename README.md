@@ -1,20 +1,20 @@
 <h1 align="center">Welcome to create-discordjs-app 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/create-discordjs-app" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/create-discordjs-app.svg">
+    <img alt="Version" src="https://img.shields.io/npm/v/create-discordjs-app.svg?style=flat-square&logo=npm">
   </a>
   
   <a href="https://github.com/erickmack/create-discordjs-app/blob/main/LICENSE" target="_blank">
-    <img alt="License: GNU GPLv3" src="https://img.shields.io/github/license/erickmack/create-discordjs-app" />
+    <img alt="License: GNU GPLv3" src="https://img.shields.io/github/license/erickmack/create-discordjs-app?style=flat-square" />
   </a>
   <a href="https://github.com/erickmack/create-discordjs-app#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?style=flat-square" />
   </a>
   <a href="https://github.com/erickmack/create-discordjs-app/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" />
   </a>
   <a href="https://twitter.com/eriickmack" target="_blank">
-    <img alt="Twitter: eriickmack" src="https://img.shields.io/twitter/follow/eriickmack.svg?style=social" />
+    <img alt="Twitter: eriickmack" src="https://img.shields.io/twitter/follow/eriickmack.svg?style=flat-square&logo=twitter" />
   </a>
 </p>
 
