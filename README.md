@@ -25,25 +25,21 @@
 ## Install package globally
 
 ```sh
-npm i -g create-discordjs-app
+$ npm i -g create-discordjs-app
+$ create-discordjs-app
 ```
 ## Use npx
 
 ```sh
-npx create-discordjs-app
+$ npx create-discordjs-app
 ```
 
 After that you will be prompted for information like Project name, Bot token, and Bot prefix
 
-Then you can start the bot with pm2
+Then you can start the bot with:
 
 ```sh
-npm start
-```
-
-or if you prefer to use node
-```sh
-npm run node
+$ npm start
 ```
 
 ## Author
