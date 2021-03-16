@@ -63,7 +63,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
       "chalk": "^4.1.0",
       "discord.js": "^12.5.1",
       "dotenv": "^8.2.0",
-      "eslint": "^7.21.0",
+      "eslint": "^7.21.0"
     }
   }
   `;
