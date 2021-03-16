@@ -51,7 +51,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     "main": "index.js",
     "scripts": {
       "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1",
       "lint": "eslint ."
     },
     "keywords": [
