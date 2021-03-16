@@ -77,7 +77,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   const packagePath = `${CURR_DIR}/${projectName}/package.json`;
   fs.writeFileSync(packagePath, packageJson, "utf8");
   console.log("Installing dependencies...");
-  child_process.execSync(`cd ${projectName} && npm i`);
+  child_process.execSync(`cd ${projectName} && npm i`,{stdio:'inherit'});
   const success = `
     Success! Created ${projectName} at ${CURR_DIR}/${projectName}
   `;
